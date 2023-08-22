@@ -5,11 +5,9 @@ import { App } from 'components/App';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename="/Elena-Marchenko/goit-react-hw-05-movies">
-    <App />
-  </BrowserRouter>
+  <React.StrictMode>
+    <BrowserRouter basename="/Elena-Marchenko/goit-react-hw-05-movies">
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
 );
-
-// {/* <React.StrictMode>
-//     <App />
-//   </React.StrictMode> */}
