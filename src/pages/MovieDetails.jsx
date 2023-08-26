@@ -2,12 +2,11 @@
 // import api from '../../servises/fetchMovies';
 // import { useParams } from 'react-router-dom';
 
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
-const MovieDetails = () => {
-  const { movieId } = useParams();
-  return <>MovieDetals: {movieId}</>;
-};
+// const MovieDetails = () => {
+//   return <div>movie: id</div>;
+// };
 
 // const MovieDetails = () => {
 //   const { id } = useParams();
@@ -21,4 +20,4 @@ const MovieDetails = () => {
 //   return <div>{movieId}</div>;
 // };
 
-export default MovieDetails;
+// export default MovieDetails;

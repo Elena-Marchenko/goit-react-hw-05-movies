@@ -1,3 +1,4 @@
+import React from 'react';
 // import { useEffect, useState } from 'react';
 // import api from '../../servises/fetchMovies';
 import { Link } from 'react-router-dom';
@@ -15,6 +16,7 @@ const Home = () => {
     </div>
   );
 };
+export default Home;
 
 // const Home = () => {
 //   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -37,5 +39,3 @@ const Home = () => {
 //     </div>
 //   );
 // };
-
-export default Home;
