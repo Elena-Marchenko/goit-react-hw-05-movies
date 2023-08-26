@@ -1,13 +1,16 @@
 // import { useEffect, useState } from 'react';
 // import api from '../../servises/fetchMovies';
 // import { useParams } from 'react-router-dom';
-
-// import { useParams } from 'react-router-dom';
-
-// const MovieDetails = () => {
-//   return <div>movie: id</div>;
-// };
-
+import React from 'react';
+import MovieCard from '../components/MovieCard/MovieCard';
+const MovieDetails = () => {
+  return (
+    <div>
+      <MovieCard />
+    </div>
+  );
+};
+export default MovieDetails;
 // const MovieDetails = () => {
 //   const { id } = useParams();
 //   const [movieId, setMovieId] = useState('');
@@ -19,5 +22,3 @@
 
 //   return <div>{movieId}</div>;
 // };
-
-// export default MovieDetails;

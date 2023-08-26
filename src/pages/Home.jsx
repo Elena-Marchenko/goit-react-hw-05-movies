@@ -1,21 +1,16 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import PopularMovies from '../components/PopularMovies/PopularMovies';
 // import { useEffect, useState } from 'react';
 // import api from '../../servises/fetchMovies';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div>
-      {['movie-1', 'movie-2', 'movie-3', 'movie-4', 'movie-5'].map(movie => {
-        return (
-          <Link key={movie} to={`${movie}`}>
-            {movie}
-          </Link>
-        );
-      })}
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <PopularMovies />
+    </Suspense>
   );
 };
+
 export default Home;
 
 // const Home = () => {
