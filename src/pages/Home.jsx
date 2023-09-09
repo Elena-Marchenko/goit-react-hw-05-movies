@@ -1,17 +1,29 @@
-import React, { Suspense } from 'react';
-import PopularMovies from '../components/PopularMovies/PopularMovies';
-// import { useEffect, useState } from 'react';
-// import api from '../../servises/fetchMovies';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import api from '../servises/fetchMovies';
 
-const Home = () => {
+const PopularMovies = () => {
+  const [trendingMovies, setTrendingMovies] = useState([]);
+  // console.log('popular:', trendingMovies);
+  useEffect(() => {
+    api.fetchMovie().then(data => setTrendingMovies(data.results));
+  }, []);
+
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <PopularMovies />
-    </Suspense>
+    <div>
+      {trendingMovies.map(res => {
+        const { id, title } = res;
+        // console.log('popular id, title:', id, title);
+        return (
+          <Link key={id} to={`movies/${id}`}>
+            {title}
+          </Link>
+        );
+      })}
+    </div>
   );
 };
-
-export default Home;
+export default PopularMovies;
 
 // const Home = () => {
 //   const [trendingMovies, setTrendingMovies] = useState([]);

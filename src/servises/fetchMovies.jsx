@@ -9,6 +9,7 @@ const fetchMovie = async () => {
     }
   });
 };
+
 const fetchMovieByName = async () => {
   return await fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&include_adult=false&language=en-US&page=1`
@@ -18,9 +19,11 @@ const fetchMovieByName = async () => {
     }
   });
 };
-const fetchMovieDetails = async () => {
+
+const fetchMovieDetails = async movieId => {
+  console.log('fetch:', movieId);
   return await fetch(
-    `https://api.themoviedb.org/3/movie/movie_id?api_key=${API_KEY}&language=en-US`
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&append_to_response=images`
   ).then(response => {
     if (response.ok) {
       return response.json();
