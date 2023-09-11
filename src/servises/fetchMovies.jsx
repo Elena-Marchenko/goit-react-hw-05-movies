@@ -21,7 +21,7 @@ const fetchMovieByName = async () => {
 };
 
 const fetchMovieDetails = async movieId => {
-  console.log('fetch:', movieId);
+  // console.log('fetch:', movieId);
   return await fetch(
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&append_to_response=images`
   ).then(response => {
@@ -30,5 +30,31 @@ const fetchMovieDetails = async movieId => {
     }
   });
 };
-const api = { fetchMovie, fetchMovieByName, fetchMovieDetails };
+const fetchCast = async movieId => {
+  return await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}`
+  ).then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+  });
+};
+
+const fetchReview = async movieId => {
+  return await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`
+  ).then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+  });
+};
+
+const api = {
+  fetchMovie,
+  fetchMovieByName,
+  fetchMovieDetails,
+  fetchCast,
+  fetchReview,
+};
 export default api;

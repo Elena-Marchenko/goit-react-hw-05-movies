@@ -9,15 +9,19 @@ const MovieDetails = () => {
   useEffect(() => {
     api.fetchMovieDetails(movieId).then(data => setMovie(data));
   }, [movieId]);
-  console.log('movieDetails:', movieId);
-  console.log('movieDetails:', movie);
+  // console.log('movieDetails:', movieId);
+  // console.log('movieDetails:', movie);
 
   return (
     movie && (
       <>
         <div>
           <h1>Movies Card-{movie.title}</h1>
-          {/* <img alt="Poster">IMG{}</img> */}
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            alt={movie.title}
+            height={400}
+          />
           <p>User score:{movie.vote_average} %</p>
           <h2>Overview</h2>
           <p>{movie.overview}</p>
